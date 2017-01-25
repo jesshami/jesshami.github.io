@@ -2,7 +2,7 @@
 title: Jess Hamilton  
 email: jesshami@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-Featuring the work of Jess Hamilton, exploring landscape architecture, data and urban design.
+featuring the work of Jess Hamilton exploring landscape architecture data and urban design
 baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jesshami  
