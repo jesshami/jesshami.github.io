@@ -14,6 +14,7 @@ This collection of tags is a living document, based on research and user feedbac
 
 Type | Geometry | Tag(s)
 ------------------------
+Sidewalk | Line | highway=footway footway=sidewalk
 
 
 

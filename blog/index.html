@@ -2,62 +2,46 @@
 layout: blog
 ---
 
-<div class='full' style='background: #f5f5f5'>
-  <div class='row'>
-    <div class='large-9 columns'>
+<!-- THIS FILE IS JUST A DESIGN TEMPLATE, THE POSTS DATA ARE NOT DYNAMIC -->
 
-      {% for post in paginator.posts %}
-        <div class='big mod modBlogPost'>
+<div class='full' style='background: #f5f5f5;'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <div class='masonry-container'>
+        {% for post in site.posts %}
+        <div class='masonry mod modBlogPost popin appear'>
+        {% if post.image %}
           <div class='images'>
-            {% if post.image %}
-              <div class='image'><img alt="" src="{{site.url}}/{{post.image}}" /></div>
-            {% endif %}
+            <div class='image'><a href="single.html"><img width="800" height="533" alt="" src="{{site.url}}/{{post.image}}" /></a></div>
           </div>
+          {% endif %}
           <div class='content'>
-            <p class='info'>
-              <span>{{post.date | date: "%B %d, %Y" }}</span>
-              /
-              <span>
-                by
-                <a href="">{{post.author}}</a>
-              </span>
-              /
-              <span>
-                In
-                {% for cat in post.categories %}
-                  <a href="#">{{cat}}</a>
-                  {% unless forloop.last %}
+            <p class='date'>{{post.date | date: "%B %d, %Y" }}</p>
+            <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+            <p>
+              {{post.excerpt}}
+            </p>
+            <div class='tags'>
+            {% for cat in post.categories %}
+              <a href="#">{{cat}}</a>
+              {% unless forloop.last %}
                       ,
                   {% endunless %}
-                {% endfor %}
-              </span>
-              /
-              <span>
-                <a href="#">4 commetns</a>
-              </span>
-            </p>
-            <h3><a href="{{post.url}}">{{post.title}}</a></h3>
-            <p>{{post.excerpt}}</p>
-            <div class='spacing'></div>
-            <a class="button small" href="{{post.url}}">Read more</a>
+              {% endfor %}
+            </div>
           </div>
         </div>
-      {% endfor %}
-
-      {% include pagination.html root="blog" %}
-      <div class='four spacing'></div>
-    </div>
-    <div class='large-3 columns' id='sidebar'>
-      {% include sidebar.html %}
-      <div class='four spacing'></div>
+        {% endfor %}
+      </div>
     </div>
   </div>
+  <div class='four spacing'></div>
 </div>
 <div class='full no-padding' style='background: #111'>
   <div class='two spacing'></div>
   <div class='row'>
     <div class='large-12 columns'>
-      <p>2014 {{site.title}}. All rights reserved.</p>
+      <p>2017 Jess Hamilton. All rights reserved.</p>
     </div>
   </div>
   <div class='spacing'></div>
