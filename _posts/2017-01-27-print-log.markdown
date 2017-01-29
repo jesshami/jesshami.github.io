@@ -1,0 +1,18 @@
+---
+layout: post
+title:  Print Test Log
+date:   2017-01-27 09:33:00
+image:	images/process/print-log.jpg
+excerpt:
+ Settings used for 3D printing Tactile MapTiles.
+categories:
+  - Web Development
+tags: design business
+author: Jess
+---
+
+Quality maps require quality prints.  While growing in popularity, 3D printing is still an unsettled science. A good print depends on a number of factors from the model and hardware to atmosphere print filiment.  Key settings used for each test print in this research have been catalogued, including notes on failures and successess for anyone that is interested in replicating or planning to build off of the Tactile MapTile work.
+
+
+[Tactile MapTile Print Log](https://docs.google.com/spreadsheets/d/1cA2_It_KqNLl62uA7NPMv6d5tsjvnK-StbJzOG2Lbww/edit?usp=sharing "3D Print Log")
+
