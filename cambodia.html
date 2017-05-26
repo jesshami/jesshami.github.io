@@ -1,16 +1,67 @@
 ---
 layout: default
-images:
-  - images/work/cambodia/map.jpg
-  - images/work/cambodia/greenwall.jpg
-  - images/work/cambodia/awning.jpg
-  - images/work/cambodia/pongro1.jpg
-  - images/work/cambodia/pongro2.jpg
-  - images/work/cambodia/phnom-penh.jpg
+slides: 
+  - bg: images/work/cambodia/LAM.png
+  - bg: images/work/cambodia/map.PNG
+  - bg: images/work/cambodia/process.png
+  - bg: images/work/cambodia/Pongro-finaldesign.png
+  - bg: images/work/cambodia/squirt.png
 
 ---
+<div class='mod modFullscreenSlider'>
+  <div class='fullscreen_slideshow' data-autostop='off'>
+    <a class='sequence-prev' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <a class='sequence-next' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <ul class='sequence-pagination'>
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign class = 'current' %}
+        {% else %}
+          {% assign class = '' %}
+        {% endif %}
+        <li class="{{class}}"></li>
+      {% endfor %}
+    </ul>
+    <ul class="sequence-canvas">
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign style = 'static' %}
+        {% else %}
+          {% assign style = '' %}
+        {% endif %}
 
-<div class='full'>
+        <li class='frame centered-text {{style}}'>
+          <h1>{{slide.title}}</h1>
+          <p>{{slide.tagline}}</p>
+          <div class='two spacing'></div>
+          <div class='buttons-wrapper'>
+            {% for button in slide.buttons %}
+              <a class='button {{button.class}}' href='{{button.url}}'>{{button.text}}</a>
+            {% endfor %}
+          </div>
+          {% if slide.videos %}
+            <div class='video_image_touch' style='background-image: url({{slide.bg}});'></div>
+            <div class='video_wrap'>
+              <div class='overlay' style='background: #000000;opacity: 0.6;'></div>
+              <video autoplay=' ' class='bg_video' loop=' ' muted=' ' preload='auto'>
+                {% for video in slide.videos %}
+                  <source src='{{video.url}}' type='video/{{video.type}}'>
+                {% endfor %}
+              </video>
+            </div>
+          {% else %}
+            <div class='bg' style='background-image: url({{slide.bg}});'></div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<!--<div class='full'>
   <div class='row'>
     <div class='large-12 columns'>
       <div class='mod modBoxedSlider'>
@@ -23,15 +74,18 @@ images:
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
+  <div class='spacing'></div>
   <div class='spacing'></div>
   <div class='row'>
     <div class='large-8 columns'>
       <h3>Pongro Senchey</h3>
       <p>
-      Pongro Senchey is an informal community situated along a thin strip of land south of the Phnom Penh airport. Families in Pongro Senchey have migrated from rural areas in search of economic opportunity and have been displaced by Phnom Penh’s rapid development. Through workshops led by the Informal Urban Communities Initiative, community members in Pongro Senchey identified infrastructure and skills training as high priorities.</p>
+      Pongro Senchey is an informal community situated along a thin strip of land south of the Phnom Penh airport. Families in Pongro Senchey have migrated from rural areas in search of economic opportunity and have been displaced by Phnom Penh’s rapid development. Through participatory design workshops, community members in Pongro Senchey identified infrastructure, communigy space and skills training as high priorities for their work with us.</p>
 
-<p>Modular green wall components were developed in response to the community’s desire to make their limited space more beautiful and productive, while also developing skills to contribute to their economic security. Made of heavy duty canvas and recycled materials, each Pongro Plant Pocket features quilted coconut coir backing designed to retain moisture, reducing watering requirements during the dry season and plant establishment. A retractable awning system, flat folding street furniture and grading plans were also created for this project. </p>
+<p>Modular green wall components were developed in response to the community’s desire to make their limited space more beautiful and productive, while also developing skills to contribute to their economic security. Made of heavy duty canvas and recycled materials, each Pongro Plant Pocket features a quilted coconut coir backing designed to retain moisture, reducing watering requirements during the dry season and plant establishment. A retractable awning system, flat folding street furniture and grading plans were also created for this project. </p>
+
+<p>Digital fabrication techniques and strategies for economic development were also explored through the establishment of a new makerspace at the Royal University of Fine Arts in Phnom Penh.</p>
 
 
       <div class='spacing'></div>
@@ -45,6 +99,7 @@ images:
          <li><a href="images/work/cambodia/LAM.pdf">Landscape Architecture Magazine</a>
          </ul>
         </li>
+        <li><br/></li>
           <li>
           <strong>Project Support</strong>
          <ul>
@@ -52,19 +107,20 @@ images:
          <li><a href="http://sqwater.be.washington.edu/wp/">Informal Urban Communities Initiative</a></li>
          </ul>
         </li>
+        <li><br/></li>
         <li>
           <strong>Date:</strong>
           Spring 2016
         </li>
         <li>
           <div class='spacing'></div>
-          <a href='urban.html' title='previous'>
+          <a href='opensidewalks.html' title='previous'>
             <i class='icon-left-open'></i>
           </a>
           <a href='index.html/#work' title='back to work list'>
             <i class='icon-layout'></i>
           </a>
-          <a href='dssg.html' title='next'>
+          <a href='scandesign.html' title='next'>
             <i class='icon-right-open'></i>
           </a>
         </li>

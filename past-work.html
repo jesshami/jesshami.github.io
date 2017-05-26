@@ -1,0 +1,137 @@
+---
+layout: default
+slides: 
+  - bg: images/work/other/fashion.png
+  - bg: images/work/other/fitist.png
+  - bg: images/work/other/tanteo.png
+  - bg: images/work/other/collectcolor.png
+
+---
+<div class='mod modFullscreenSlider'>
+  <div class='fullscreen_slideshow' data-autostop='off'>
+    <a class='sequence-prev' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <a class='sequence-next' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <ul class='sequence-pagination'>
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign class = 'current' %}
+        {% else %}
+          {% assign class = '' %}
+        {% endif %}
+        <li class="{{class}}"></li>
+      {% endfor %}
+    </ul>
+    <ul class="sequence-canvas">
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign style = 'static' %}
+        {% else %}
+          {% assign style = '' %}
+        {% endif %}
+
+        <li class='frame centered-text {{style}}'>
+          <h1>{{slide.title}}</h1>
+          <p>{{slide.tagline}}</p>
+          <div class='two spacing'></div>
+          <div class='buttons-wrapper'>
+            {% for button in slide.buttons %}
+              <a class='button {{button.class}}' href='{{button.url}}'>{{button.text}}</a>
+            {% endfor %}
+          </div>
+          {% if slide.videos %}
+            <div class='video_image_touch' style='background-image: url({{slide.bg}});'></div>
+            <div class='video_wrap'>
+              <div class='overlay' style='background: #000000;opacity: 0.6;'></div>
+              <video autoplay=' ' class='bg_video' loop=' ' muted=' ' preload='auto'>
+                {% for video in slide.videos %}
+                  <source src='{{video.url}}' type='video/{{video.type}}'>
+                {% endfor %}
+              </video>
+            </div>
+          {% else %}
+            <div class='bg' style='background-image: url({{slide.bg}});'></div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<!--<div class='full'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <div class='mod modBoxedSlider'>
+        <div class='slides'>
+          {% for image in page.images %}
+            <div class="slide">
+              <img src="{{site.url}}/{{image}}" alt="">
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>-->
+  <div class='spacing'></div>
+  <div class='spacing'></div>
+  <div class='row'>
+    <div class='large-8 columns'>
+      <h3>Miscellaneous Work</h3>
+      <p>
+      </p>
+
+<p>The select pieces above are a small sample work I have contributed to in the last ten years.  My formal design education is owed to both the Fashion Institute of Technology in New York, and the University of Washington in Seattle, however the skills and lessons learned working with talented artists and designers, in New York and around the world cannot be undersold. </p>
+
+
+<p>If you would like additional information on any of the work featured here, please <a href="mailto:jesshami@gmail.com">contact me</a>.
+
+
+
+      <div class='spacing'></div>
+     
+    </div>
+    <div class='large-4 columns'>
+      <ul class='info'>
+        <li>
+          <strong>Mentors</strong>
+         <ul>
+         <li><a href="https://www.lincolnmayne.com/">Lincoln Mayne</a></li>
+         <li><a href="http://attarcreative.com/">Philip Attar</a></li>
+         </ul>
+        </li>
+        <li><br/></li>
+        <li>
+          <strong>Date:</strong>
+          2007-2012
+        </li>
+        <li>
+          <div class='spacing'></div>
+          <a href='scandesign.html' title='previous'>
+            <i class='icon-left-open'></i>
+          </a>
+          <a href='index.html/#work' title='back to work list'>
+            <i class='icon-layout'></i>
+          </a>
+          <a href='tactile-maps.html' title='next'>
+            <i class='icon-right-open'></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class='four spacing'></div>
+</div>
+
+
+
+<div class='full no-padding' style='background: #111'>
+  <div class='two spacing'></div>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <p>©2017 {{site.title}}. All rights reserved.</p>
+    </div>
+  </div>
+  <div class='spacing'></div>
+</div>

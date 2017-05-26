@@ -1,13 +1,70 @@
 ---
 layout: default
-images:
-  - images/work/urban/1website.jpg
-  - images/work/urban/2metrolab.jpg
-  - images/work/urban/3urbanenvironmentaljustice.jpg
-  - images/work/urban/4nextseattle.jpg
----
+slides: 
+  - bg: images/work/urban/arrayofthingsseattle.jpg
+  - bg: images/work/urban/cascadiadata.png
+  - bg: images/work/urban/urbanalytics.png
+  - bg: images/work/urban/metrolab.jpg
+  - bg: images/work/urban/urbanweb.jpg
+  - bg: images/work/urban/nextseattle.jpg
+  - bg: images/work/urban/urbanenvironmentaljustice.jpg
 
-<div class='full'>
+
+---
+<div class='mod modFullscreenSlider'>
+  <div class='fullscreen_slideshow' data-autostop='off'>
+    <a class='sequence-prev' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <a class='sequence-next' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <ul class='sequence-pagination'>
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign class = 'current' %}
+        {% else %}
+          {% assign class = '' %}
+        {% endif %}
+        <li class="{{class}}"></li>
+      {% endfor %}
+    </ul>
+    <ul class="sequence-canvas">
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign style = 'static' %}
+        {% else %}
+          {% assign style = '' %}
+        {% endif %}
+
+        <li class='frame centered-text {{style}}'>
+          <h1>{{slide.title}}</h1>
+          <p>{{slide.tagline}}</p>
+          <div class='two spacing'></div>
+          <div class='buttons-wrapper'>
+            {% for button in slide.buttons %}
+              <a class='button {{button.class}}' href='{{button.url}}'>{{button.text}}</a>
+            {% endfor %}
+          </div>
+          {% if slide.videos %}
+            <div class='video_image_touch' style='background-image: url({{slide.bg}});'></div>
+            <div class='video_wrap'>
+              <div class='overlay' style='background: #000000;opacity: 0.6;'></div>
+              <video autoplay=' ' class='bg_video' loop=' ' muted=' ' preload='auto'>
+                {% for video in slide.videos %}
+                  <source src='{{video.url}}' type='video/{{video.type}}'>
+                {% endfor %}
+              </video>
+            </div>
+          {% else %}
+            <div class='bg' style='background-image: url({{slide.bg}});'></div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<!--<div class='full'>
   <div class='row'>
     <div class='large-12 columns'>
       <div class='mod modBoxedSlider'>
@@ -20,21 +77,31 @@ images:
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
+  <div class='spacing'></div>
   <div class='spacing'></div>
   <div class='row'>
     <div class='large-8 columns'>
-      <h3>Urban@UW</h3>
+      <h3>Urban@UW / Urbanlytics Studio</h3>
       <p>
        Urban@UW extends understanding of cities—from people, buildings, infrastructure, and energy to economics, policy, culture, art, and nature—beyond individual topics to dynamically interdependent systems, so that we can holistically design and steward vibrant and welcoming cities in which future generations will thrive.</p>
-
-<p>As Urban@UW’s first employee, I  developed an identity, and digital communications plan in line with emerging university standards.  In the first year I built a web presence complete with database featuring hundreds of scholars &amp;labs engaged in research around urban related questions.  I also developed course materials for the NextSeattle undergraduate urban innovation challenge and served as the mentor to the team that received 2nd place.  My role evolved overseeing general communication strategy and developing process documentation to accommodate our growing team.  I provided logistical support for the urban environmental justice in a time of climate change symposium, and was the  primary Urban@UW facilitator for the metro lab big data and human services workshop. Currently I am working as a program coordinator for Urbanlytics Studio, and continuing my work on the OpenSidewalks project under that umbrella.
+<p>Currently serving as the program coordinatior for the Urbanalyitcs Studio, my work supports initiatives including the Cascadia Urban Data Cooperative, Metrolab Seattle partnership, Array of Things Seattle and the OpenSidewalks project.</p>
+<p>I developed the identities and communcations materials for Urban@UW, the Urbanalytics Studio and the Cascadia Urban Data Cooperative. In Urban@UW's first year I built a digital communications strategy and web presence complete with database featuring hundreds of scholars &amp; labs engaged in urban research.</p>  
+<p>In the three years spent with Urban@UW and it's affiliated projects, my role has included coordination and research for various projects including the NextSeattle undergraduate urban innovation challenge and Urban@UW's urban environmental justice initiative.<p>
       </p>
       <div class='spacing'></div>
-      <a class='button small' href='http://urban.uw.edu' target="_blank">Visit website</a>
     </div>
     <div class='large-4 columns'>
       <ul class='info'>
+      <strong>Program Websites:</strong>
+        <li>  
+        <ul>
+        <li><a  href='http://urban.uw.edu' target="_blank">Urban@UW</a></li>
+        <li><a href='http://urbanalytics.uw.edu' target="_blank">Urbanlytics Studio</a></li>
+        <li><a href='http://cascadiadata.org' target="_blank">Cascadia Urban Data Cooperative</a></li>   
+        </ul>
+        </li>
+        <li><br/></li>
         <li>
           <strong>Related Press:</strong>
           <ul>
@@ -44,17 +111,21 @@ images:
           <li><a href="http://www.washington.edu/news/2015/10/27/uw-initiative-aims-to-tackle-city-regions-most-pressing-urban-issues/">NextSeattle</a></li>
           <li><a href="http://www.washington.edu/news/2015/09/14/uw-city-of-seattle-join-smart-cities-network-2/">UW and City of Seattle Join Metrolab Network</a></li>
           </ul>
-           <li>
-          <strong>Project Support</strong>
+  </li>
+  <li><br/></li>
+  <li>
+          <strong>Program Support</strong>
          <ul>
          <li><a href="https://www.macfound.org/">MacArthur Foundation</a></li>
          <li><a href="https://www.microsoft.com/">Microsoft</a></li>
          <li><a href="https://www.pnnl.gov/">Pacific Northwest National Laboratory</a></li>
          <li><a href="http://comotion.uw.edu/">UW CoMotion</a></li>
+          <li><a href="http://escience.uw.edu/">UW eScience Institute</a></li>
          <li><a href="https://www.washington.edu/research/or/">UW Office of Research</a></li>
          </ul>
-        </li>
-        <li>
+         </li>
+         <li><br/></li>
+         <li>
           <strong>Date:</strong>
           December 2014 - Present
         </li>
@@ -66,7 +137,7 @@ images:
           <a href='index.html/#work' title='back to work list'>
             <i class='icon-layout'></i>
           </a>
-          <a href='cambodia.html' title='next'>
+          <a href='opensidewalks.html' title='next'>
             <i class='icon-right-open'></i>
           </a>
         </li>

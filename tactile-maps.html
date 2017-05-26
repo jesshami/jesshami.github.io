@@ -1,11 +1,71 @@
 ---
 layout: default
-images:
-  - images/work/tactile/map-flow.jpg
-  - images/work/tactile/tactile-map.jpg
----
+slides: 
+  - bg: images/work/tactile/16finalmaps.png
+  - bg: images/work/tactile/02people.png
+  - bg: images/work/tactile/03vision.png
+  - bg: images/work/tactile/07surfaces.png
+  - bg: images/work/tactile/08topo.png
+  - bg: images/work/tactile/10sidewalks.png
+  - bg: images/work/tactile/12grasshopper.png
+  - bg: images/work/tactile/14process.png
+    
 
-<div class='full'>
+---
+<div class='mod modFullscreenSlider'>
+  <div class='fullscreen_slideshow' data-autostop='off'>
+    <a class='sequence-prev' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <a class='sequence-next' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <ul class='sequence-pagination'>
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign class = 'current' %}
+        {% else %}
+          {% assign class = '' %}
+        {% endif %}
+        <li class="{{class}}"></li>
+      {% endfor %}
+    </ul>
+    <ul class="sequence-canvas">
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign style = 'static' %}
+        {% else %}
+          {% assign style = '' %}
+        {% endif %}
+
+        <li class='frame centered-text {{style}}'>
+          <h1>{{slide.title}}</h1>
+          <p>{{slide.tagline}}</p>
+          <div class='two spacing'></div>
+          <div class='buttons-wrapper'>
+            {% for button in slide.buttons %}
+              <a class='button {{button.class}}' href='{{button.url}}'>{{button.text}}</a>
+            {% endfor %}
+          </div>
+          {% if slide.videos %}
+            <div class='video_image_touch' style='background-image: url({{slide.bg}});'></div>
+            <div class='video_wrap'>
+              <div class='overlay' style='background: #000000;opacity: 0.6;'></div>
+              <video autoplay=' ' class='bg_video' loop=' ' muted=' ' preload='auto'>
+                {% for video in slide.videos %}
+                  <source src='{{video.url}}' type='video/{{video.type}}'>
+                {% endfor %}
+              </video>
+            </div>
+          {% else %}
+            <div class='bg' style='background-image: url({{slide.bg}});'></div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<!--<div class='full'>
   <div class='row'>
     <div class='large-12 columns'>
       <div class='mod modBoxedSlider'>
@@ -18,26 +78,30 @@ images:
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
+  <div class='spacing'></div>
   <div class='spacing'></div>
   <div class='row'>
     <div class='large-8 columns'>
-      <h3>Tactile Maps</h3>
+      <h3>Tactile MapTile</h3>
       <p>
-       Under the guidance of the Taskar Center for Accessible Technology and a group of expert users, this ongoing thesis work pairs a participatory design approach together with rule-based, data derived design strategies in the development of tools that can be used to facilitate navigation and a better understanding of the built environment by people with visual impairments.  The project pulls data from OpenStreetMap and uses Rhino 3D’s visual scripting plugin, Grasshopper to generate parametric models which are then 3D printed.  This rapid prototyping approach allows for user feedback to be quickly incorporated throughout the design process.</p>  
-
-<p>Additionally I am partnered with a group of computer science students, that are working to automate the generation of these designs through a web application, with the goal of provide easy access to low cost tactile maps anywhere in the world. </p>
+       This project presents an alternative approach to understandings the pedestrian experience. Challenging the existing primacy afforded to vision, this work takes a tactile approach. Physical abstractions are used as a means to guide people through the multi-sensory environments encountered everyday. Designed as tools that enhance spatial understanding for people within a large range of visual capacities, these maps consider circumstances that influence a full spectrum of experience.  These tiles confront gaps in the cartographic record as it pertains to inclusive design, and considers how that is manifest in the lived experience.</p>
+<p>Developed under the guidance of the Taskar Center for Accessible Technology. This work pairs a participatory, data-driven design approach together with interdisciplinary collaboration. 3D printed, parametrically designed map tiles allow for user feedback, and ever changing open-data sets to be quickly incorporated.
+</p>
+<p><a href="images/work/tactile/tactilemaptile.pdf">Project Summary PDF</a></p>
       <div class='spacing'></div>
     </div>
     <div class='large-4 columns'>
       <ul class='info'>
         <li>
-          <strong>Forthcoming Presentations:</strong>
+          <strong>Presentations:</strong>
           <ul>
           <li>AIA Seattle - Design For All 2/3/17</li>
           <li>Global Cities Transportation Challenge 2/2/2017</li>
           </ul>
           </li>
+          <li></li>
+          <li><br></li>
           <li>
           <strong>Project Support</strong>
           <ul>
@@ -46,13 +110,15 @@ images:
             <li><a href="http://urban.uw.edu/">Urban@UW</a></li>
           </ul>
           </li>
+          <li></li>
+          <li><br></li>
           <li>
           <strong>Date:</strong>
           November 2016 - Present
         </li>
         <li>
           <div class='spacing'></div>
-          <a href='dssg.html' title='previous'>
+          <a href='past-work.html' title='previous'>
             <i class='icon-left-open'></i>
           </a>
           <a href='index.html/#work' title='back to work list'>
