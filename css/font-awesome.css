@@ -164,11 +164,10 @@
 }
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
-.fa-goodreads:before{
-  content:"\f3a8"
-}
-.fa-goodreads-g:before{
-  content:"\f3a9"
+.fa-goodreads:before {
+  content: "g"; /* Just use a letter as placeholder */
+  font-family: sans-serif;
+  font-weight: bold;
 }
 .fa-glass:before {
   content: "\f000";
