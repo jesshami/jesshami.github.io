@@ -167,7 +167,8 @@
 .fa-goodreads:before {
   content: "g"; /* Just use a letter as placeholder */
   font-family: sans-serif;
-  font-weight: bold;
+  font-weight: normal;
+  font-style: normal;
 }
 .fa-glass:before {
   content: "\f000";
